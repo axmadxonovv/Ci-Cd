@@ -42,6 +42,8 @@ jobs:
         key: ${{ secrets.SERVER_SSH_KEY }}
         script: |
           cd /home/ubuntu/Ci-Cd
+          git add .
+          git commit -m "Local changes before pull"
           git pull origin main
           npm install --production
           npm run build
