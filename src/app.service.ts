@@ -3,6 +3,10 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class AppService {
   getHello(): string {
-    return 'Hello  Ci!';
+    return 'Hello, World!';
+  }
+
+  getSum(a: number, b: number): number {
+    return a + b;
   }
 }
