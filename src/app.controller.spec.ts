@@ -4,8 +4,6 @@ import { AppService } from './app.service';
 
 describe('AppController', () => {
   let appController: AppController;
-  let appService: AppService;
-
   beforeEach(async () => {
     const moduleRef: TestingModule = await Test.createTestingModule({
       controllers: [AppController],
@@ -21,7 +19,6 @@ describe('AppController', () => {
     }).compile();
 
     appController = moduleRef.get<AppController>(AppController);
-    appService = moduleRef.get<AppService>(AppService);
   });
 
   describe('getHello', () => {
