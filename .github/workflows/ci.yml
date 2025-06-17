@@ -29,7 +29,7 @@ jobs:
     - name: Build qilish
       run: npm run build
 
-  deploy:
+      deploy:
     needs: build-test
     runs-on: ubuntu-latest
 
@@ -42,9 +42,19 @@ jobs:
         key: ${{ secrets.SERVER_SSH_KEY }}
         script: |
           cd /home/ubuntu/Ci-Cd
-          git add .
-          git commit -m "Local changes before pull"
-          git pull origin main
+
+          echo "🧹 Local branchni tozalayapmiz..."
+          git reset --hard HEAD
+          git clean -fd
+
+          echo "⬇️ GitHub'dan so'nggi kodni tortayapmiz (rebase bilan)..."
+          git pull --rebase
+
+          echo "📦 Dependenciyalarni o‘rnatayapmiz..."
           npm install --production
+
+          echo "🛠 Build jarayoni..."
           npm run build
+
+          echo "🚀 PM2 orqali serverni qayta ishga tushirayapmiz..."
           pm2 restart ciServer
