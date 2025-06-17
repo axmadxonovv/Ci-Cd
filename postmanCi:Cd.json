@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "3f1f025b-721c-4e3e-9059-9c9c069ba4f3",
+		"name": "NestJS API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41717470",
+		"_collection_link": "https://tdiu22.postman.co/workspace/TDIU~74d714da-7acc-455b-89e4-ed8255f87d68/collection/41717470-3f1f025b-721c-4e3e-9059-9c9c069ba4f3?action=share&source=collection_link&creator=41717470"
+	},
+	"item": [
+		{
+			"name": "GET /hello",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://13.51.171.66:5000/hello",
+					"protocol": "http",
+					"host": [
+						"13",
+						"51",
+						"171",
+						"66"
+					],
+					"port": "5000",
+					"path": [
+						"hello"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST /sum",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"a\": 5, \"b\": 4 }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://13.51.171.66:5000/sum",
+					"protocol": "http",
+					"host": [
+						"13",
+						"51",
+						"171",
+						"66"
+					],
+					"port": "5000",
+					"path": [
+						"sum"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
